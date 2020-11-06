@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 import { GET_ERRORS, GET_BACKLOG} from "./types";
 
 
@@ -22,12 +22,12 @@ export const addProjectTask = (
 }
     
   };
-
+//fetching minitasks using backlog id/project identifier
   export const getBacklog =backlog_id=>async dispatch=>{
       try{
-const res = await axios.get(`/api/backlog/${backlog_id}`)
+const res = await axios.get(`/api/backlog/${backlog_id}`);
 dispatch({
-    type:getBacklog,
+    type:GET_BACKLOG,
     payLoad:res.data
 
 });

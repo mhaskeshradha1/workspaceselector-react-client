@@ -20,6 +20,7 @@ componentDidMount(){
 
     render() {
         const {id}=this.props.match.params;
+        const {project_tasks} = this.props.backlog
         return (
              
       <div className="container">
@@ -28,7 +29,12 @@ componentDidMount(){
       </Link>
       <br />
       <hr />
-      <Backlog />
+      
+      
+        <Backlog project_tasks_prop={project_tasks} />
+      
+      
+    
     </div>
         )
 

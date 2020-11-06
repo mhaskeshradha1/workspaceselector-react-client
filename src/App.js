@@ -10,7 +10,7 @@ import {Provider} from "react-redux"
 import store from "./store" 
 import UpdateProject from './components/projects/UpdateProject';
 import ProjectBoard from "./components/ProjectBoard/ProjectBoard";
-import AddProjectTask from './components/ProjectBoard/ProjectTask/AddProjectTask';
+import AddProjectTask from './components/ProjectBoard/ProjectTasks/AddProjectTask';
 
 function App() {
   return (
