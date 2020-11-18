@@ -10,29 +10,37 @@ import ProjectTask from "./ProjectTasks/ProjectTask";
         <ProjectTask key={project_task.id} project_task={project_task} />
       )):[];
     
-      let todoItems = [];
+      let todoItems = [{
+        "id": 15, "projectSequence": "PR21-1",
+        "summary": "first task mini", "acceptanceCriteria": "parent task should complete",
+        "status": "TO_DO", "priority": 2, "dueDate": "2020-11-11T00:00:00.000+00:00",
+        "myprojectidentifier": "PR21", "create_At": "2020-11-09T17:15:17.928+00:00"
+      }];
     let inProgressItems = [];
     let doneItems = [];
 
     for (let i = 0; i < tasks.length; i++) {
-      console.log(tasks[i]);
+        console.log(tasks[i]);
     
-    if (tasks[i].props.project_task.status === "TO_DO") {
-      todoItems.push(tasks[i]);
-    }
+        if (tasks[i].props.project_task.status === "TO_DO") {
+          todoItems.push(tasks[i]);
+        }
 
-    if (tasks[i].props.project_task.status === "IN_PROGRESS") {
-      inProgressItems.push(tasks[i]);
-    }
+        if (tasks[i].props.project_task.status === "IN_PROGRESS") {
+          inProgressItems.push(tasks[i]);
+        }
 
-    if (tasks[i].props.project_task.status === "DONE") {
-      doneItems.push(tasks[i]);
-    }
-  }
+        if (tasks[i].props.project_task.status === "DONE") {
+          doneItems.push(tasks[i]);
+        }
+      }
+
+  
+  console.log(" Backlog board this  " , this);
   
         return (
             
-            <div className="container">
+          <div className="container">
             <div className="row">
               <div className="col-md-4">
                 <div className="card text-center mb-2">
@@ -40,7 +48,7 @@ import ProjectTask from "./ProjectTasks/ProjectTask";
                     <h3>TO DO</h3>
                   </div>
                 </div>
-                {todoItems}
+                {todoItems.map(a => <ProjectTask />)}
             {
               // insert tasks here
             }

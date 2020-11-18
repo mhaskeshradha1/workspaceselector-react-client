@@ -51,7 +51,7 @@ onChange(e) {
       dueDate: this.state.dueDate
     };
     this.props.addProjectTask(
-      this.state.myprojectIdentifier,
+      this.state.myprojectidentifier,
       newTask,
       this.props.history
     );

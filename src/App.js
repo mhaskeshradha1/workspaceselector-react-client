@@ -18,15 +18,9 @@ function App() {
     <Router>
     <div className="App">
     <Header />
-       {
-         //first route goes to dashboard-click dashboard- will see vreate task page
-       }
+       
         <Route exact path="/dashboard" component ={Dashboard}/>
-        {
-          //below route goes to add atsk form
-        }
         <Route exact path="/addProject" component ={AddProject}/>
-        
         <Route exact path="/updateProject/:id" component ={UpdateProject}/>
         <Route exact path="/projectBoard/:id" component ={ProjectBoard}/>
         <Route exact path="/addProjectTask/:id" component ={AddProjectTask}/>
