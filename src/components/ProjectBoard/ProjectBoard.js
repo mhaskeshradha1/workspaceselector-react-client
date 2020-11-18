@@ -21,6 +21,10 @@ componentDidMount(){
     render() {
         const {id}=this.props.match.params;
         const {project_tasks} = this.props.backlog
+        
+        console.log(" Project board project_tasks @@@@@@@@@@@@@@@ " , project_tasks);
+        console.log(" Project board project_tasks ################ " , this.state);
+
         return (
              
       <div className="container">

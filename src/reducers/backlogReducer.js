@@ -11,9 +11,13 @@ const initialState = {
   export default function(state=initialState,action){
       switch(action.type){
         case GET_BACKLOG:
+
+          console.log("############ action ", action);
+          
             return {
               ...state,
-              project_tasks: action.payload
+              project_tasks: action.payload,
+              backlog: action.payload
             };
       
           case GET_PROJECT_TASK:
