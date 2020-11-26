@@ -14,6 +14,29 @@ import AddProjectTask from './components/ProjectBoard/ProjectTasks/AddProjectTas
 import Landing from './components/Layout/Landing';
 import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
+import jwt_decode from "jwt-decode";
+import setJWTToken from "./securityUtils/setJWTToken";
+import { SET_CURRENT_USER } from "./actions/types";
+
+
+//set the jwtToken in App.js because will not loose the state after refreshing the page.
+//after entering login and password in login form and clicking refresh will lead to state loose
+const jwtToken = localStorage.jwtToken;
+
+if (jwtToken) {
+  setJWTToken(jwtToken);
+  const decoded_jwtToken = jwt_decode(jwtToken);
+  store.dispatch({
+    type: SET_CURRENT_USER,
+    payload: decoded_jwtToken
+  });
+// check whether token is valis still
+  const currentTime = Date.now() / 1000;
+  if (decoded_jwtToken.exp < currentTime) {
+    //handle logout
+    //window.location.href = "/";
+  }
+}
 
 function App() {
   return (
