@@ -32,7 +32,7 @@ export const login = LoginRequest => async dispatch => {
         const res = await axios.post("api/users/login", LoginRequest);
     //token extraction from res data
         const { token } = res.data;
-    //store token in localstorage
+    //store token in localstorage- go to console-application-localstorage-localhost:3000-will get token
         localStorage.setItem("jwtToken", token);
     //set token in header
     setJWTToken(token)
