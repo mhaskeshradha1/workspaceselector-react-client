@@ -8,6 +8,9 @@ import {getBacklog} from "../../actions/backlogActions"
  class ProjectBoard extends Component {
 
 //constructor
+   
+   
+   
 
 componentDidMount(){
   const { id } = this.props.match.params;
@@ -22,8 +25,8 @@ componentDidMount(){
         const {id}=this.props.match.params;
         const {project_tasks} = this.props.backlog
         
-        console.log(" Project board project_tasks @@@@@@@@@@@@@@@ " , project_tasks);
-        console.log(" Project board project_tasks ################ " , this.state);
+        console.log(" Project board project_tasks mine task  " , project_tasks);
+        console.log(" Project board project_tasks state task " , this.state);
 
         return (
              

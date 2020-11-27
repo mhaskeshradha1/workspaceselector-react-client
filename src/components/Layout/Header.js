@@ -29,7 +29,9 @@ class Header extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">
                
-                    { user? user.fullName : ''}
+                  {user ? user.fullName : ''}
+                  
+             
                  
                 </Link>
               </li>
@@ -37,9 +39,9 @@ class Header extends Component {
                 <Link
                   className="nav-link"
                   to="/logout"
-                  onClick={this.logout.bind(this)}>
-                
-                  Logout
+                  onClick={this.logout.bind(this)}
+                >
+                 Logout
                 </Link>
               </li>
             </ul>
@@ -77,7 +79,8 @@ class Header extends Component {
                <Link className="navbar-brand" to ="/">
                 Workspace Selection Tool
                </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav"
+              >
                 <span className="navbar-toggler-icon" />
             </button>
 
