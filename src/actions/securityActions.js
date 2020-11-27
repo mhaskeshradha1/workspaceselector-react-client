@@ -8,15 +8,17 @@ import jwt_decode from "jwt-decode"
 export const createNewUser = (newUser, history) => async dispatch => { 
     try {
 
-
+console.log("the new user", newUser)
         await axios.post("/api/users/register", newUser);
         history.push("/login")
         dispatch({
-            type: GET_ERRORS,
-            payload: {}
-          });
+          type: GET_ERRORS,
+          payload: {}
+        });
 
-    } catch(err) { 
+    } catch (err) { 
+      
+      console.log("the eror is", err)
 
         dispatch({
             type: GET_ERRORS,
